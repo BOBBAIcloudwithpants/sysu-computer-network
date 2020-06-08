@@ -12,7 +12,7 @@ using namespace std;
 #define BUFF_SIZE 256
 #define PORT 8888
 
-#define EXPECT_PACKAGE 20000
+#define EXPECT_PACKAGE 4000
 
 long long number = 0;
 void receive_msg(int socket_fd)
@@ -32,7 +32,7 @@ void receive_msg(int socket_fd)
       cout << "Receive message failed" << endl;
     }
     number++;
-    cout << "Receive: " << buf << "from client. 丢包率: " << (double)number / EXPECT_PACKAGE << endl;
+    cout << "Receive: " << buf << "from client. 丢包率: " << (double)(EXPECT_PACKAGE-number) / EXPECT_PACKAGE << endl;
 
     memset(buf, BUFF_SIZE, 0);
 
