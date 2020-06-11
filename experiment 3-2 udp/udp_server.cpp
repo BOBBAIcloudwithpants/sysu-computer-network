@@ -12,7 +12,7 @@ using namespace std;
 #define BUFF_SIZE 256
 #define PORT 8888
 
-#define EXPECT_PACKAGE 4000
+#define EXPECT_PACKAGE 15000
 
 long long number = 0;
 void receive_msg(int socket_fd)
